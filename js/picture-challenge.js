@@ -15,9 +15,23 @@ const bank=[
  {image:'images/picture-challenge/disappointed.webp',icon:'📲',alt:'A disappointed teenager looking at a smartphone.',question:'How does the teenager feel?',answers:['proud','frightened','disappointed','relaxed'],correctAnswer:2,explanation:'Disappointed means unhappy because something was not as good as you hoped or expected.'}
 ];
 
+const assetVersion=Date.now();
+
+function loadPictures(){
+ document.querySelectorAll('.picture-image[data-picture-src]:not([data-ready])').forEach(img=>{
+   const fallback=img.nextElementSibling;
+   img.dataset.ready='true';
+   img.addEventListener('load',()=>{img.hidden=false;fallback.hidden=true},{once:true});
+   img.addEventListener('error',()=>{img.hidden=true;fallback.hidden=false},{once:true});
+   const separator=img.dataset.pictureSrc.includes('?')?'&':'?';
+   img.src=`${img.dataset.pictureSrc}${separator}v=${assetVersion}`;
+ });
+}
+
 function picture(x){
+ setTimeout(loadPictures,0);
  return `<div class="picture-media">
-   <img class="picture-image" src="${x.image}" alt="${x.alt}" hidden onload="this.hidden=false;this.nextElementSibling.hidden=true" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+   <img class="picture-image" data-picture-src="${x.image}" alt="${x.alt}" hidden>
    <div class="picture-fallback" role="img" aria-label="${x.alt}">
      <b aria-hidden="true">${x.icon}</b><span>PICTURE CHALLENGE</span><small>Final illustration coming soon</small>
    </div>
