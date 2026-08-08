@@ -1,0 +1,6 @@
+# Local browser smoke-test artifacts
+academy-*-smoke.png
+academy-smoke.png
+dom-smoke.html
+smoke-result.html
+chrome-test-profile/
