@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090824"><title>English Monster Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <header class="topbar"><a class="brand" href="#home"><span>👾</span><b>ENGLISH <i>MONSTER</i><small>ACADEMY</small></b></a>
+    <button class="nav-toggle" aria-label="Open navigation">☰</button><nav><a href="#home">Home</a><a href="#games">Games</a><a href="#how">How It Works</a><a href="#about">About</a></nav>
+    <button class="sound-toggle" aria-label="Toggle sound">🔊 <span>SOUND ON</span></button>
+  </header>
+  <main>
+    <section class="hero" id="home"><div class="hero-copy"><span class="eyebrow">⚡ B1 ENGLISH GAME</span><h1>ENGLISH<br><em>MONSTER</em><br>ACADEMY</h1><p class="tagline">Learn. Battle. Win.</p><p>Enter the Monster Academy, complete English challenges, defeat funny monsters and become an English Master!</p><div class="actions"><a class="btn primary" href="#games">PLAY NOW <span>→</span></a><button class="btn ghost" data-help="academy">HOW TO PLAY</button></div></div>
+      <div class="hero-art"><div class="orbit">A <i>★</i> B <i>⚡</i></div><img src="images/hero-monster.png" alt="Friendly neon academy monster holding a glowing English book"><span class="float f1">★</span><span class="float f2">Z</span><span class="float f3">⚡</span></div>
+    </section>
+    <section class="stats panel" aria-label="Player dashboard"><div>🏆 <span>Score</span><strong id="stat-score">0</strong></div><div>⭐ <span>Stars</span><strong id="stat-stars">0</strong></div><div>🔥 <span>Streak</span><strong id="stat-streak">0</strong></div><div>🎯 <span>Completed</span><strong id="stat-completed">0/4</strong></div><button class="text-btn" id="reset-progress">Reset progress</button></section>
+    <section class="section" id="games"><div class="section-head"><span class="eyebrow">SELECT YOUR MISSION</span><h2>CHOOSE YOUR <em>CHALLENGE</em></h2><p>Four monsters. Four challenges. One English Master.</p></div><div class="game-grid" id="game-grid"></div></section>
+    <section class="section" id="achievements"><div class="section-head"><span class="eyebrow">YOUR TROPHY ROOM</span><h2>ACHIEVEMENTS</h2></div><div class="achievement-grid" id="achievement-grid"></div></section>
+    <section class="section" id="how"><div class="section-head"><span class="eyebrow">THREE EASY STEPS</span><h2>HOW IT WORKS</h2></div><div class="steps"><article><b>01</b><span>🎮</span><h3>CHOOSE</h3><p>Pick your monster challenge.</p></article><article><b>02</b><span>⚔️</span><h3>PLAY</h3><p>Complete English tasks and earn points.</p></article><article><b>03</b><span>🏆</span><h3>WIN</h3><p>Defeat all monsters and become an English Master.</p></article></div></section>
+    <section class="section about" id="about"><div><span class="eyebrow">LEVEL UP YOUR ENGLISH</span><h2>WHY ENGLISH<br><em>MONSTER ACADEMY?</em></h2><p>English Monster Academy makes English practice exciting. Improve your grammar, vocabulary and sentence-building skills while playing fast, colourful mini-games.</p><div class="tags"><span>Grammar</span><span>Vocabulary</span><span>Reading</span><span>Sentence Building</span><span>Speed</span><span>B1 English</span></div></div><div class="about-orb">B1<small>POWER</small></div></section>
+  </main>
+  <footer><div class="brand"><span>👾</span><b>ENGLISH <i>MONSTER</i><small>ACADEMY</small></b></div><p>Learn. Battle. Win.<br><small>Made for English learners.</small></p><div><a href="#home">Home</a><a href="#games">Games</a><button class="sound-toggle">🔊</button></div></footer>
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true"><div class="modal-card"><button class="modal-x" aria-label="Close">×</button><div id="modal-content"></div></div></div>
+  <div class="game-shell" id="game-shell" aria-hidden="true"><button class="game-close" aria-label="Back to games">×</button><div id="game-content"></div></div>
+  <div class="toast" id="toast" role="status"></div>
+  <audio id="music" src="sounds/background.mp3" loop preload="none"></audio>
+  <script src="js/main.js"></script><script src="js/monster-battle.js"></script><script src="js/picture-challenge.js"></script><script src="js/sentence-lab.js"></script><script src="js/word-rush.js"></script>
+</body></html>
